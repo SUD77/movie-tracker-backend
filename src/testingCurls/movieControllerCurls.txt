@@ -1,0 +1,38 @@
+🎬 MOVIE TRACKER API TESTS
+
+------------------------------------------
+POST /api/movies
+------------------------------------------
+curl -X POST http://localhost:4000/api/movies \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Inception",
+    "duration": 148,
+    "rating": 9,
+    "review": "Mind-bending thriller"
+  }'
+
+------------------------------------------
+GET /api/movies
+------------------------------------------
+curl -X GET http://localhost:4000/api/movies
+
+------------------------------------------
+GET /api/movies/:id
+------------------------------------------
+curl -X GET http://localhost:4000/api/movies/<movie_id>
+
+------------------------------------------
+PUT /api/movies/:id
+------------------------------------------
+curl -X PUT http://localhost:4000/api/movies/<movie_id> \
+  -H "Content-Type: application/json" \
+  -d '{
+    "rating": 10,
+    "review": "One of Nolan's best"
+  }'
+
+------------------------------------------
+DELETE /api/movies/:id
+------------------------------------------
+curl -X DELETE http://localhost:4000/api/movies/<movie_id>
